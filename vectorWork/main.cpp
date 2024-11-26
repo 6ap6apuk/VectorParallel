@@ -1,5 +1,6 @@
 #include "vectorWork.h"
 #include "sumClass.h"
+#include "minClass.h"
 #include <iostream>
 
 using namespace std;
@@ -20,8 +21,10 @@ int main() {
     vec.initialize(minVal, maxVal);
 
     SumFuncs<double> sumFunctions(vec);
+    MinFuncs<double> minFunctions(vec);
 
     std::cout << "Сумма: " << sumFunctions.findSum(0, arraySize) << std::endl;
+    std::cout << "Минимум: " << minFunctions.findMin(0, arraySize) << std::endl;
 
     return 0;
 }

@@ -8,18 +8,10 @@
 #include <numeric>
 #include <cstddef>
 #include "vectorWork.h"
+#include "funcResult.h"
 
 using namespace std;
 using namespace chrono;
-
-template<typename T>
-struct FuncResult {
-    T _result;
-    long long _time;
-
-    FuncResult(T result, long long time);
-    void Print();
-};
 
 template<typename T>
 class SumFuncs {

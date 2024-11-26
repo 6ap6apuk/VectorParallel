@@ -1,15 +1,6 @@
 #include "sumClass.h"
 
 template<typename T>
-FuncResult<T>::FuncResult(T result, long long time)
-    : _result(result), _time(time) {}
-
-template<typename T>
-void FuncResult<T>::Print() {
-    std::cout << "[val: " << _result << "; time: " << _time << "]" << std::endl;
-}
-
-template<typename T>
 SumFuncs<T>::SumFuncs(Vector<T>& vec) : thisVector(vec) {}
 
 template<typename T>
