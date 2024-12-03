@@ -27,6 +27,21 @@
     <ClCompile Include="vectorWork.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\avgClass.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\euclidClass.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\manhattanClass.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\maxClass.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\scalarClass.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="funcResult.h">
@@ -39,6 +54,21 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="vectorWork.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\avgClass.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\euclidClass.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\manhattanClass.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\maxClass.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\scalarClass.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

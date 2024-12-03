@@ -5,7 +5,7 @@ SumFuncs<T>::SumFuncs(Vector<T>& vec) : thisVector(vec) {}
 
 template<typename T>
 T SumFuncs<T>::findSum(size_t indStart, size_t indEnd) {
-    if (!thisVector.isInitialized) throw runtime_error("Вектор не инициализирован");
+    if (!thisVector.isInitialized) throw runtime_error("Г‚ГҐГЄГІГ®Г° Г­ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г®ГўГ Г­");
     T sum = 0;
 
     if (indEnd <= thisVector.sizeN) {
@@ -25,7 +25,7 @@ T SumFuncs<T>::findSum() {
 template<typename T>
 T SumFuncs<T>::findSum(size_t indStart, size_t indEnd, int numThreads) {
     if (!thisVector.isInitialized) {
-        throw std::runtime_error("Массив не инициализирован!");
+        throw std::runtime_error("ГЊГ Г±Г±ГЁГў Г­ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г®ГўГ Г­!");
     }
 
     T totalSum = 0;

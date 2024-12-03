@@ -19,12 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\avgClass.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\euclidClass.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\manhattanClass.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\maxClass.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\scalarClass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="minClass.cpp" />
     <ClCompile Include="sumClass.cpp" />
     <ClCompile Include="vectorWork.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\avgClass.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\euclidClass.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\manhattanClass.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\maxClass.h" />
+    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\scalarClass.h" />
     <ClInclude Include="funcResult.h" />
     <ClInclude Include="minClass.h" />
     <ClInclude Include="sumClass.h" />

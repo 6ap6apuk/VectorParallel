@@ -5,7 +5,7 @@ MinFuncs<T>::MinFuncs(Vector<T>& vec) : thisVector(vec) {}
 
 template<typename T>
 T MinFuncs<T>::findMin(size_t indStart, size_t indEnd) {
-    if (!thisVector.isInitialized) throw runtime_error("Вектор не инициализирован");
+    if (!thisVector.isInitialized) throw runtime_error("Г‚ГҐГЄГІГ®Г° Г­ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г®ГўГ Г­");
     T sum = 0;
 
     T minVal = numeric_limits<T>::max();
@@ -24,7 +24,7 @@ T MinFuncs<T>::findMin() {
 template<typename T>
 T MinFuncs<T>::findMin(size_t indStart, size_t indEnd, int numThreads) {
     if (!thisVector.isInitialized) {
-        throw std::runtime_error("Массив не инициализирован!");
+        throw std::runtime_error("ГЊГ Г±Г±ГЁГў Г­ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г®ГўГ Г­!");
     }
 
     std::vector<std::thread> threads;

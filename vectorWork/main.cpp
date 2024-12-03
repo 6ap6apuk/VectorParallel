@@ -10,21 +10,21 @@ int main() {
     srand(static_cast<unsigned int>(time(0)));
 
     size_t arraySize;
-    std::cout << "Ââåäèòå ðàçìåð ìàññèâà: ";
+    std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã Ã§Ã¬Ã¥Ã° Ã¬Ã Ã±Ã±Ã¨Ã¢Ã : ";
     std::cin >> arraySize;
 
     Vector<double> vec(arraySize);
 
     double minVal, maxVal;
-    std::cout << "Ââåäèòå çíà÷åíèå min è max: ";
+    std::cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ min Ã¨ max: ";
     std::cin >> minVal >> maxVal;
     vec.initialize(minVal, maxVal);
 
     SumFuncs<double> sumFunctions(vec);
     MinFuncs<double> minFunctions(vec);
 
-    std::cout << "Ñóììà: " << sumFunctions.findSum(0, arraySize) << std::endl;
-    std::cout << "Ìèíèìóì: " << minFunctions.findMin(0, arraySize) << std::endl;
+    std::cout << "Ã‘Ã³Ã¬Ã¬Ã : " << sumFunctions.findSum(0, arraySize) << std::endl;
+    std::cout << "ÃŒÃ¨Ã­Ã¨Ã¬Ã³Ã¬: " << minFunctions.findMin(0, arraySize) << std::endl;
 
     return 0;
 }
