@@ -27,19 +27,19 @@
     <ClCompile Include="vectorWork.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\avgClass.cpp">
+    <ClCompile Include="avgClass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\euclidClass.cpp">
+    <ClCompile Include="euclidClass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\manhattanClass.cpp">
+    <ClCompile Include="manhattanClass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\maxClass.cpp">
+    <ClCompile Include="maxClass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\scalarClass.cpp">
+    <ClCompile Include="scalarClass.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,19 +56,19 @@
     <ClInclude Include="vectorWork.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\avgClass.h">
+    <ClInclude Include="avgClass.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\euclidClass.h">
+    <ClInclude Include="euclidClass.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\manhattanClass.h">
+    <ClInclude Include="manhattanClass.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\maxClass.h">
+    <ClInclude Include="maxClass.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\..\..\Users\Egorik\Desktop\vector\scalarClass.h">
+    <ClInclude Include="scalarClass.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

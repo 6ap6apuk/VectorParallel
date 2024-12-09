@@ -6,32 +6,33 @@ EuclidFuncs<T>::EuclidFuncs(Vector<T>& vec) : thisVector(vec) {}
 
 template<typename T>
 T EuclidFuncs<T>::findEuclid() {
-    if (!isInitialized) throw runtime_error("Вектор не инициализирован");
+    if (!thisVector.isInitialized) throw runtime_error("Вектор не инициализирован");
     T sum = 0;
-    for (size_t i = 0; i < sizeN; i++) {
-        sum += mainVector[i] * mainVector[i];
+    for (size_t i = 0; i < thisVector.sizeN; i++) {
+        sum += thisVector.mainVector[i] * thisVector.mainVector[i];
     }
     return sqrt(sum);
 }
 
 template<typename T>
 T EuclidFuncs<T>::findEuclid(unsigned numThreads) {
-    if (!isInitialized) {
+    if (!thisVector.isInitialized) {
         throw std::runtime_error("Массив не инициализирован!");
     }
 
     std::vector<std::thread> threads;
     std::vector<T> localSums(numThreads, 0);
     std::mutex sumMutex;
+
     auto start = std::chrono::high_resolution_clock::now();
-    size_t blockSize = sizeN / numThreads;
+    size_t blockSize = thisVector.sizeN / numThreads;
     for (int i = 0; i < numThreads; ++i) {
         threads.emplace_back([this, &localSums, &sumMutex, blockSize, i, numThreads]() {
             size_t startIdx = i * blockSize;
-            size_t endIdx = (i == (numThreads - 1)) ? sizeN : startIdx + blockSize;
+            size_t endIdx = (i == (numThreads - 1)) ? thisVector.sizeN : startIdx + blockSize;
             T localSum = 0;
             for (size_t j = startIdx; j < endIdx; ++j) {
-                localSum += mainVector[j] * mainVector[j];
+                localSum += thisVector.mainVector[j] * thisVector.mainVector[j];
             }
             std::lock_guard<std::mutex> lock(sumMutex);
             localSums[i] = localSum;
@@ -42,7 +43,7 @@ T EuclidFuncs<T>::findEuclid(unsigned numThreads) {
     }
     T totalSum = std::accumulate(localSums.begin(), localSums.end(), static_cast<T>(0));
 
-    return euclidNorm;
+    return sqrt(totalSum);
 }
 
 template<typename T>

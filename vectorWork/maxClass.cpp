@@ -6,9 +6,9 @@ MaxFuncs<T>::MaxFuncs(Vector<T>& vec) : thisVector(vec) {}
 template<typename T>
 T MaxFuncs<T>::findMax(size_t indStart, size_t indEnd) {
     if (!thisVector.isInitialized) throw runtime_error("Вектор не инициализирован");
-    T maxVal = numeric_limits<T>::Max();
-    for (size_t i = 0; i < sizeN; i++) {
-            if (mainVector[i] > maxVal) maxVal = mainVector[i];
+    T maxVal = numeric_limits<T>::max();
+    for (size_t i = 0; i < thisVector.sizeN; i++) {
+        if (thisVector.mainVector[i] > maxVal) maxVal = thisVector.mainVector[i];
     }
     return maxVal;
 }
@@ -28,19 +28,19 @@ T MaxFuncs<T>::findMax(size_t indStart, size_t indEnd, int numThreads) {
     std::vector<T> localMaxs(numThreads, std::numeric_limits<T>::max());
     std::mutex MaxMutex;
 
-    size_t blockSize = sizeN / numThreads;
+    size_t blockSize = thisVector.sizeN / numThreads;
         for (int i = 0; i < numThreads; ++i) {
-            threads.emplace_back([this, &localMaxs, &maxMutex, blockSize, i, numThreads]() {
+            threads.emplace_back([this, &localMaxs, &MaxMutex, blockSize, i, numThreads]() {
                 size_t startIdx = i * blockSize;
-                size_t endIdx = (i == (numThreads - 1)) ? sizeN : startIdx + blockSize;
+                size_t endIdx = (i == (numThreads - 1)) ? thisVector.sizeN : startIdx + blockSize;
                 T localMax = std::numeric_limits<T>::min();
                 for (size_t j = startIdx; j < endIdx; ++j) {
-                    if (mainVector[j] > localMax) {
-                        localMax = mainVector[j];
+                    if (thisVector.mainVector[j] > localMax) {
+                        localMax = thisVector.mainVector[j];
                     }
                 }
                 // Защита от конкурентного доступа
-                std::lock_guard<std::mutex> lock(maxMutex);
+                std::lock_guard<std::mutex> lock(MaxMutex);
                 localMaxs[i] = localMax;
             });
     }
@@ -48,7 +48,7 @@ T MaxFuncs<T>::findMax(size_t indStart, size_t indEnd, int numThreads) {
         th.join();
     }
 
-    T MaxValue = *std::Max_element(localMaxs.begin(), localMaxs.end());
+    T MaxValue = *std::max_element(localMaxs.begin(), localMaxs.end());
 
     return MaxValue;
 }

@@ -9,7 +9,6 @@
 #include <cstddef>
 #include "vectorWork.h"
 #include "funcResult.h"
-#include "newFile.h"
 
 using namespace std;
 using namespace chrono;
@@ -18,7 +17,6 @@ template<typename T>
 class AvgFuncs {
 private:
     Vector<T>& thisVector;
-
 public:
     AvgFuncs(Vector<T>& vec);
     T findAvg(size_t indStart, size_t indEnd);

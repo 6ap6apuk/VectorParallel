@@ -17,7 +17,6 @@ template<typename T>
 class SumFuncs {
 private:
     Vector<T>& thisVector;
-
 public:
     SumFuncs(Vector<T>& vec);
     T findSum(size_t indStart, size_t indEnd);

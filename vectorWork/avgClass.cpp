@@ -1,14 +1,21 @@
-#include "AvgClass.h"
-#include "SumClass.h"
+#include "avgClass.h"
+#include "sumClass.h"
+#include "vectorWork.h"
 
 template<typename T>
-AvgFuncs<T>::AvgFuncs(Vector<T>& vec) : thisVector(vec) {}
+AvgFuncs<T>::AvgFuncs(Vector<T>& vec) : thisVector(vec) {} 
 
 template<typename T>
 T AvgFuncs<T>::findAvg(size_t indStart, size_t indEnd) {
     if (!thisVector.isInitialized) throw runtime_error("Вектор не инициализирован");
-    T sum = findSum();
-    return sum / static_cast<T>(sizeN);
+    T sum = 0;
+
+    if (indEnd <= thisVector.sizeN) {
+        for (size_t i = indStart; i < indEnd; i++) {
+            sum += thisVector.mainVector[i];
+        }
+    }
+    return sum / static_cast<T>(thisVector.sizeN);
 }
 
 template<typename T>
@@ -18,18 +25,23 @@ T AvgFuncs<T>::findAvg() {
 
 template<typename T>
 T AvgFuncs<T>::findAvg(size_t indStart, size_t indEnd, int numThreads) {
-    size_t blockSize = sizeN / numThreads;
+    std::vector<std::thread> threads;
+    std::vector<T> localSums(numThreads, 0);
+    std::vector<T> localCounts(numThreads, 0);
+    std::mutex sumMutex;
+
+    size_t blockSize = thisVector.sizeN / numThreads;
         for (int i = 0; i < numThreads; ++i) {
             threads.emplace_back([this, &localSums, &localCounts, &sumMutex, blockSize, i, numThreads]() {
                 size_t startIdx = i * blockSize;
-                size_t endIdx = (i == (numThreads - 1)) ? sizeN : startIdx + blockSize;
+                size_t endIdx = (i == (numThreads - 1)) ? thisVector.sizeN : startIdx + blockSize;
                 T localSum = 0;
                 for (size_t j = startIdx; j < endIdx; ++j) {
-                    localSum += mainVector[j];
+                    localSum += thisVector[j];
                 }
                 std::lock_guard<std::mutex> lock(sumMutex);
                 localSums[i] = localSum;
-                localCounts[i] = endIdx - startIdx; // Количество элементов
+                localCounts[i] = endIdx - startIdx;
                 });
         }
         for (auto& th : threads) {

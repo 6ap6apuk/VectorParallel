@@ -17,5 +17,5 @@ FuncResult<T>::FuncResult(T result, long long time)
 
 template<typename T>
 void FuncResult<T>::Print() {
-    std::cout << "[val: " << _result << "; time: " << _time << "]" << std::endl;
+    std::cout << "[Значение: " << _result << "; время выполнения (мс): " << _time << "]" << std::endl;
 }

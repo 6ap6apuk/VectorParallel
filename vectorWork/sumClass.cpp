@@ -1,11 +1,12 @@
 #include "sumClass.h"
+#include <stdexcept>
 
 template<typename T>
 SumFuncs<T>::SumFuncs(Vector<T>& vec) : thisVector(vec) {}
 
 template<typename T>
 T SumFuncs<T>::findSum(size_t indStart, size_t indEnd) {
-    if (!thisVector.isInitialized) throw runtime_error("Âåêòîð íå èíèöèàëèçèðîâàí");
+    if (!thisVector.isInitialized) throw runtime_error("Вектор не инициализирован");
     T sum = 0;
 
     if (indEnd <= thisVector.sizeN) {
@@ -13,7 +14,6 @@ T SumFuncs<T>::findSum(size_t indStart, size_t indEnd) {
             sum += thisVector.mainVector[i];
         }
     }
-
     return sum;
 }
 
@@ -25,7 +25,7 @@ T SumFuncs<T>::findSum() {
 template<typename T>
 T SumFuncs<T>::findSum(size_t indStart, size_t indEnd, int numThreads) {
     if (!thisVector.isInitialized) {
-        throw std::runtime_error("Ìàññèâ íå èíèöèàëèçèðîâàí!");
+        throw std::runtime_error("Вектор не инициализирован!");
     }
 
     T totalSum = 0;
